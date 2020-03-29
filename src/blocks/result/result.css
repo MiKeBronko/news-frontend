@@ -1,0 +1,63 @@
+@import url(./__title/result__title.css);
+@import url(./__button-more/result__button-more.css);
+@import url(./_login/result_login.css);
+@import url(./_invisible/result_invisible.css);
+
+
+.result {
+  margin: 0 auto;
+  background: #f5f6f7;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 1440px) {
+  .result {
+    width: 1440px;
+    z-index: 50;
+
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1023px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 849px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 599px) {
+  .result {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .result {
+    width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+.popup__button.popup__button_active {
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    background: #2f71e5;
+    outline: none;
+}
+
+

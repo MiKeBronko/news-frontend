@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="<%=require('../images/favicon.png')%>" type="image/x-icon">
+  <title>News Viewer</title>
+   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css%>">
+</head>
+<body>
+<div class="page">
+
+  <header class="header header_login">
+       <a href="../index.html" alt="news viewer logo" class="header__logo header__logo_login">NewsExplorer</a>
+    <nav class="header__nav header__nav_login">
+       <a href="../index.html" class="header__main header__main_visible header__main_login">Главная</a>
+       <a href="" class="header__article header__article_visible header__article_login">Сохранённые статьи</a>
+        <a href="../index.html" class="header__usr header__usr_login">Грета&ensp;<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#1a1b22"/>
+          </svg>
+      </a>
+      <div class="header__nav-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="8" width="16" height="2" fill="#1a1b22"/>
+        <rect x="4" y="14" width="16" height="2" fill="#1a1b22"/>
+      </svg>
+    </div>
+    </nav>
+</header>
+
+<main class="content">
+
+  <section class="saved">
+    <h1 class="saved__title">Сохранённые статьи</h1>
+    <h2 class="saved__subtitle">Грета, у вас&#32;<span class="saved__count">5</span>&#32;сохранённых статей</h2>
+    <p class="saved__description">По ключевым словам:&#32;<span class="saved__keywords">Природа, Тайга</span>&#32;и&#32;<span class="saved__keywords">2 другим</span></p>
+</section>
+
+<section id="result" class="result result_login">
+  <div class="saved-list">
+      <div class="card">
+            <h3 class="title card__title">Национальное достояние – парки</h3>
+            <img src="<%=require('../images/card1.png').default%>" alt="Картинка к статье" class="card__image">
+            <button class="card__icon-trash">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" fill="#b6bcbf"/>
+                </svg>
+            </button>
+            <p class="title card__keyword">Природа</p>
+            <p class="card__tooltip card__tooltip_trash">Убрать из сохранённых</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            </span>
+            <span class="card__resource">Лента.ру</span>
+      </div>
+      <div class="card">
+          <h3 class="title card__title">Лесные огоньки: история одной фотографии.</h3>
+          <img src="<%=require('../images/card2.png').default%>" alt="Картинка к статье" class="card__image">
+          <button class="card__icon-trash">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" fill="#b6bcbf"/>
+              </svg>
+          </button>
+          <p class="card__tooltip card__tooltip_trash">Убрать из сохранённых</p>
+          <span class="card__date">2 августа, 2019</span>
+          <span class="card__article">
+            <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+          </span>
+          <span class="card__resource">МЕДУЗА</span>
+      </div>
+      <div class="card">
+        <h3 class="title card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+        <img src="<%=require('../images/card3.png').default%>" alt="Картинка к статье" class="card__image">
+        <button class="card__icon-trash">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" fill="#b6bcbf"/>
+            </svg>
+          </button>
+          <p class="card__tooltip card__tooltip_trash">Убрать из сохранённых</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
+            </span>
+            <span class="card__resource">РИА</span>
+      </div>
+      <div class="card">
+        <h3 class="title card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+        <img src="<%=require('../images/card3.png').default%>" alt="Картинка к статье" class="card__image">
+        <button class="card__icon-trash">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" fill="#b6bcbf"/>
+            </svg></button>
+            <p class="card__tooltip card__tooltip_trash">Убрать из сохранённых</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
+            </span>
+            <span class="card__resource">РИА</span>
+      </div>
+      <div class="card">
+        <h3 class="title card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+        <img src="<%=require('../images/card3.png').default%>" alt="Картинка к статье" class="card__image">
+        <button class="card__icon-trash">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 3H9V5H3V7H21V5H15V3ZM5 9V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V9H17V20H7V9H5ZM9 9L9 18H11L11 9H9ZM13 9V18H15V9H13Z" fill="#b6bcbf"/>
+            </svg></button>
+            <p class="card__tooltip card__tooltip_trash">Убрать из сохранённых</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
+            </span>
+            <span class="card__resource">РИА</span>
+      </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+  <p class="footer__copyright">&copy;&nbsp;2020.&nbsp;Supersite, Powered by News API</p>
+  <nav class="footer__nav">
+    <ul class="footer__list">
+      <li class="footer__item">
+        <a href="#" class="footer__link" target="_blank">Главная</a>
+      </li>
+      <li class="footer__item">
+        <a href="https://praktikum.yandex.ru/" class="footer__link" target="_blank">Яндекс.Практикум</a>
+      </li>
+      <li class="footer__item">
+        <a href="https://github.com/" target="_blank" class="footer__link">
+          <img src="<%=require('../images/git.png').default%>" alt="логотип гитхаб">
+        </a>
+      </li>
+      <li class="footer__item">
+        <a href="https://www.facebook.com/" target="_blank" class="footer__link"><img src="<%=require('../images/fb.png').default%>" alt="логотип facebook"></a>
+      </li>
+    </ul>
+  </nav>
+</footer>
+
+</div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

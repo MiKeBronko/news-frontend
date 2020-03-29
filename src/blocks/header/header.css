@@ -1,0 +1,79 @@
+@import url(./__nav/header__nav.css);
+@import url(./__logo/header__logo.css);
+@import url(./__nav-focus/header__nav-focus.css);
+@import url(./__nav-mobile/header__nav-mobile.css);
+@import url(./_login/header_login.css);
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* position: absolute; */
+  border-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.541);
+  z-index: 100;
+  width: 1440px;
+  position: relative;
+  top: 0;
+}
+
+header::after {
+  display: inline-block;
+  width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 1440px) {
+  .header {
+    width: 1440px;
+    height: 79px;
+    z-index: 50;
+    margin: 0 auto -80px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .header {
+    width: 100%;
+    height: 79px;
+    z-index: 50;
+    margin: 0 auto -80px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .header {
+    width: 100%;
+    height: 79px;
+    z-index: 50;
+    margin: 0 auto -80px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    width: 100%;
+    margin: 0 auto -70px;
+    height: 65px;
+  }
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .header {
+    width: 100%;
+    height: 55px;
+    z-index: 50;
+    margin: 0 auto -60px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .header {
+    width: 100%;
+    height: 55px;
+    z-index: 50;
+    margin: 0 auto -60px;
+  }
+}

@@ -1,0 +1,136 @@
+@import url(./__image/card__image.css);
+@import url(./__title/card__title.css);
+@import url(./__article/card__article.css);
+@import url(./__date/card__date.css);
+@import url(./__text/card__text.css);
+@import url(./__resource/card__resource.css);
+@import url(./__icon-trash/card__icon-trash.css);
+@import url(./__icon-bookmark/card__icon-bookmark.css);
+@import url(./__tooltip/card__tooltip.css);
+@import url(./__keyword/card__keyword.css);
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.card:hover {
+  background: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card:last-child {
+  justify-self: flex-start;
+}
+
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 400px;
+    height: 576px;
+  }
+  .card:hover {
+    width: 400px;
+    height: 576px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .card {
+    width: 400px;
+    height: 576px;
+  }
+  .card:hover {
+    width: 400px;
+    height: 576px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .card {
+    width: 400px;
+    height: 576px;
+  }
+  .card:hover {
+    width: 400px;
+    height: 576px;
+  }
+}
+
+  @media screen and (min-width: 901px) and (max-width:1023px) {
+    .card {
+      width: 224px;
+      height: 420px;
+    }
+    .card:hover {
+      width: 224px;
+      height: 420px;
+    }
+  }
+
+
+@media screen and (min-width: 851px) and (max-width: 900px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+  .card:hover {
+    width: 224px;
+    height: 420px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .card {
+    width: 224px;
+    height: 420px;
+    grid-template-columns: 224px;
+  }
+  .card:hover {
+    width: 224px;
+    height: 420px;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 767px) {
+  .card {
+    width: 288px;
+    height: 440px;
+    grid-template-columns: 288px;
+
+  }
+  .card:hover {
+    width: 288px;
+    height: 440px;
+  }
+}
+
+
+@media screen and (min-width: 401px) and (max-width: 550px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+}

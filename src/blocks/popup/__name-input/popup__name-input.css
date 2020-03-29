@@ -1,0 +1,20 @@
+.popup__name-input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2f72e5;
+}
+
+.popup__name-input:last-of-type {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000;
+  margin-right: 0;
+}
+

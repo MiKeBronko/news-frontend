@@ -1,0 +1,17 @@
+@import url(../../__form/_signup/popup__form_signup.css);
+
+.popup__content.popup__content_reg {
+  width: 430px;
+  height: 458px;
+}
+
+
+
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .popup__content.popup__content_reg {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px;
+  }
+}

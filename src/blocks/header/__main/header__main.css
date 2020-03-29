@@ -1,0 +1,55 @@
+@import url(./_login/header__main_login.css);
+@import url(./_visible/header__main_visible.css);
+
+.header__main {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  z-index: 2;
+  display: none;
+}
+
+@media screen  and (min-width: 1440px) {
+  .header__main {
+    font-size: 18px;
+  }
+}
+
+@media screen  and (min-width: 1279px) and (max-width: 1439px) {
+  .header__main {
+    font-size: 18px;
+  }
+
+}
+
+@media screen  and (min-width: 1024px) and (max-width: 1279px) {
+  .header__main {
+    font-size: 18px;
+  }
+}
+
+
+@media screen  and (min-width: 768px) and (max-width: 1023px) {
+  .header__main {
+    font-size: 16px;
+    margin-right: 16px;
+  }
+}
+
+
+
+@media screen  and (min-width: 375px) and (max-width: 767px) {
+  .header__main {
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .header__main {
+    font-size: 18px;
+  }
+}

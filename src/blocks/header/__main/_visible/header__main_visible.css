@@ -1,0 +1,9 @@
+.header__main.header__main_visible {
+  display: block;
+}
+
+@media screen and (min-width: 320px) and (max-width: 700px) {
+  .header__main.header__main_visible {
+    display: none;
+  }
+}
