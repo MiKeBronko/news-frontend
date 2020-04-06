@@ -1,0 +1,5 @@
+.popup__form-login.popup__form-login_visible {
+  display: flex;
+  flex-direction: column;
+}
+

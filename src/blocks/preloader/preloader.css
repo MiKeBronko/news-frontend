@@ -1,0 +1,66 @@
+@import url(./__circle/preloader__circle.css);
+@import url(./__load/preloader__load.css);
+@import url(./__circle-offset/preloader__circle-offset.css);
+
+.preloader {
+  position: relative;
+  margin: 0;
+	background-color: #333;
+  overflow: hidden;
+  width: 1440px;
+  height: 282px;
+  margin: 0 auto;
+  background: #f5f6f7;
+  display: none;
+}
+
+
+@media screen and (min-width: 1440px) {
+  .preloader {
+    width: 1440px;
+    z-index: 50;
+
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1023px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 849px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 599px) {
+  .preloader {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .preloader {
+    width: 100%;
+  }
+}

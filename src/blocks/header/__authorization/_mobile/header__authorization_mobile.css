@@ -1,0 +1,15 @@
+@import url(../_visible/header__authorization_visible.css);
+
+.header__authorization.header__authorization_mobile {
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+};
+
+@media screen and (min-width: 700px) {
+  .header__authorization.header__authorization_mobile {
+    display: none;
+  }
+}

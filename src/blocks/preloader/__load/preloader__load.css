@@ -1,0 +1,24 @@
+.preloader__load {
+    font-family: 'Roboto', 'inter' ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 64px;
+    color: #b6bcbf;
+}
+
+.preloader__load:after {
+    content: '.';
+    animation: loading 1s ease alternate infinite;
+}
+
+@keyframes loading {
+    60%  { text-shadow: 0.35em 0 0 currentColor; }
+    100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+}
+

@@ -1,0 +1,36 @@
+@import url(../__content/_reg/popup__content_reg.css);
+
+.popup__input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-left: 0px;
+
+  font-family: 'Inter', 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  outline: none;
+}
+
+.popup__input::placeholder {
+  width: 100%;
+  font-family: 'Inter', 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  opacity: 0.2;
+}
+
+.popup__input:invalid:not(:placeholder-shown) + .popup__error {
+  display: block;
+}

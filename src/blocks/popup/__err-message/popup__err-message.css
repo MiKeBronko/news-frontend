@@ -1,0 +1,22 @@
+@import url(./_hidden/popup__err-message_hidden.css);
+
+.popup__err-message {
+  font-family: 'Inter', 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  display: block;
+  margin-bottom: 13px;
+}
+
+
+.popup__form-reg .popup__err-message:last-of-type {
+  margin: 0 auto 8px auto;
+}
+
+
+/* .popup__input:invalid:not(:placeholder-shown) + .popup__error {
+  display: block;
+} */

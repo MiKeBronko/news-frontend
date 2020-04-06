@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="<%=require('./images/favicon.png').default%>" type="image/x-icon">
+  <title>News Viewer</title>
+   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+  <div class="page">
+
+  <header class="header">
+    <a href="./" alt="news viewer logo" class="header__logo">NewsExplorer</a>
+    <nav class="header__nav header__nav_login">
+      <a href="#" class="header__main header__main_visible">Главная</a>
+      <!-- <hr class="header__nav-focus"> -->
+        <a href="./saved/saved.html" class="header__article header__article_visible">Сохранённые статьи</a>
+        <a href="#" class="header__usr header__usr_main">Грета&ensp;<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#fff"/>
+          </svg>
+        </a>
+          <a href="#" class="header__authorization">Авторизоваться</a>
+
+          <div class="header__nav-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="16" height="2" fill="#fff"/>
+            <rect x="4" y="14" width="16" height="2" fill="#fff"/>
+          </svg>
+        </div>
+      </nav>
+
+      <nav class="panel-mobile">
+        <img src="<%=require('./images/close-mid.svg').default%>" class="panel-mobile__close" alt="иконка закрытия формы" />
+        <ul class="panel-mobile__list">
+          <li class="panel-mobile__elm">
+            <a href="" class="header__main header__main_mobile">Главная</a>
+          </li>
+          <li class="panel-mobile__elm">
+            <a href="./saved/saved.html" class="header__article header__article_mobile">Сохранённые статьи</a>
+          </li>
+          <li class="panel-mobile__elm">
+            <a href="#" class="header__usr header__usr_mobile">Грета&ensp;<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#fff"/></svg></a>
+          </li>
+          <li class="panel-mobile__elm">
+            <a href="#" class="header__auth-mobile">Авторизоваться</a>
+          </li>
+       </ul>
+      </nav>
+  </header>
+
+<main class="content">
+
+  <section class="search">
+      <h1 class="title search__title">Что в мире творится?</h1>
+        <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
+      <img src="<%=require('./images/backfone.png').default%>" loading="eager" alt="Смартфон в руке на фоне зеленого растения" class="search__image" />
+      <div class="search__block">
+        <input id="input"  required type="text" minlength="2" maxlength="30" name="input" class="search__input" placeholder="Введите тему новости">
+        <button id="search__button" name='input' type="submit" class="button search__button">Искать</button>
+      </div>
+    </section>
+
+  <section id="preloader" class="preloader">
+    <i class="preloader__circle-offset"></i>
+    <i class="preloader__circle"></i>
+      <p class="preloader__load">Идет поиск новостей</p>
+    </section>
+
+    <!-- <section id="not-found" class="not-found">
+    <img src="<%=require('./images/not-found_v1.png').default%>" alt="Фото автора" class="" />
+      <p class="not-found__desc">Ничего не найдено</p>
+      <p class="not-found_desc">К сожалению по вашему запросу
+        ничего не найдено.</p>
+    </section> -->
+
+    <section id="result" class="result result_login">
+
+      <h2 class="title result__title">Результаты поиска</h2>
+
+        <div id='card-list' class="card-list">
+          <div class="card">
+            <h3 class="title card__title">Национальное достояние – парки</h3>
+            <img src="<%=require('./images/card1.png').default%>" alt="Картинка к статье" class="card__image" />
+            <button class="card__icon-bookmark">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="#C4C4C4" fill-opacity="0.4"/>
+                <path d="M5 4C5 3.44771 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V22L12 16.5L5 22V4Z" stroke-width="1"  stroke="#b6bcbf" fill="none"/>
+                </svg>
+            </button>
+            <p class="title card__keyword">Природа</p>
+            <p class="card__tooltip">Войдите, чтобы сохранять статьи</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            </span>
+            <span class="card__resource">Лента.ру</span>
+        </div>
+
+        <div class="card">
+          <h3 class="title card__title">Лесные огоньки: история одной фотографии.</h3>
+          <img src="<%=require('./images/card2.png').default%>" alt="Картинка к статье" class="card__image" />
+          <button class="card__icon-bookmark card__icon-bookmark_login">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" fill="#C4C4C4" fill-opacity="0.4"/>
+              <path d="M5 4C5 3.44771 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V22L12 16.5L5 22V4Z" stroke-width="1"  stroke="#b6bcbf" fill="none"/>
+              </svg>
+          </button>
+          <p class="card__tooltip">Войдите, чтобы сохранять статьи</p>
+          <span class="card__date">2 августа, 2019</span>
+          <span class="card__article">
+            <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+          </span>
+          <span class="card__resource">МЕДУЗА</span>
+      </div>
+
+      <div class="card">
+        <h3 class="title card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+        <img src="<%=require('./images/card3.png').default%>" alt="Картинка к статье" class="card__image" />
+        <button class="card__icon-bookmark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" fill="#C4C4C4" fill-opacity="0.4"/>
+            <path d="M5 4C5 3.44771 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V22L12 16.5L5 22V4Z" stroke-width="1"  stroke="#b6bcbf" fill="none"/>
+            </svg></button>
+            <p class="card__tooltip">Войдите, чтобы сохранять статьи</p>
+            <span class="card__date">2 августа, 2019</span>
+            <span class="card__article">
+              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где</p>
+            </span>
+            <span class="card__resource">РИА</span>
+          </div>
+    </div>
+
+    <button id="button-more" name='input' type="button" class="result__button-more" disabled>Показать ещё</button>
+
+
+  </section>
+
+
+ <section class="author">
+      <h4 class="title author__title">Об авторе</h4>
+      <img src="<%=require('./images/author-min.png').default%>" alt="Фото автора" class="author__photo" />
+      <div class="author__block">
+        <p class="author__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+        <p class="author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+      </div>
+  </section>
+
+  <div class="popup">
+
+    <div class="popup__content">
+       <h3 class="popup__title">Вход</h3>
+      <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" />
+<!-- ------------------------------------------LOGIN------------------------------------ -->
+      <form class="popup__form-login popup__form-login_visible" name="form">
+        <label class="popup__field popup__name-input">
+          <span id="name-iput" class="name-iput">Email</span>
+          <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
+          <span id="error-email" class="popup__err-message"></span>
+        </label>
+        <label class="popup__field">
+          <span id="name-iput" class="popup__name-input">Пароль</span>
+          <input  id="sample" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
+          <span id="error-sample" class="popup__err-message"></span>
+        </label>
+          <span id="success-message" class="popup__err-message popup__err-message_hidden">any key</span>
+          <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
+      </form>
+<!-- ------------------------------------------REGIST------------------------------------ -->
+      <form class="popup__form-reg" name="formReg">
+        <label class="popup__field popup__name-input">
+          <span id="name-iput" class="name-iput">Email</span>
+          <input id="emailReg" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email_reg">
+          <span id="error-emailReg" class="popup__err-message"></span>
+        </label>
+        <label class="popup__field">
+          <span id="name-iput" class="popup__name-input">Пароль</span>
+          <input  id="sampleReg" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample_reg">
+          <span id="error-sampleReg" class="popup__err-message"></span>
+        </label>
+        <!-- <label class="popup__field popup__name-input">
+           <span id="name-iput" class="name-iput">Email</span>
+           <input id="email" type="email" name="email" placeholder="Введите почту" class="popup__input popup__input-email">
+           <span id="error-email" class="popup__err-message"></span>
+        </label>
+        <label class="popup__field">
+          <span id="name-iput" class="popup__name-input">Пароль</span>
+          <input  id="sample" type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
+          <span id="error-sample" class="popup__err-message"></span>
+        </label> -->
+        <label class="popup__field">
+          <span id="name-iput" class="popup__name-input">Имя</span>
+          <input  id="name" type="text" name="name" class="popup__input popup__input-username" placeholder="Введите своё имя">
+          <span id="error-name" class="popup__err-message"></span>
+        </label>
+          <span id="success-message" class="popup__err-message popup__err-message_hidden">Такой пользователь уже есть</span>
+          <button id="submit" name='sign' type="button" class="button popup__button popup__button_reg" disabled=true>Зарегистрироваться</button>
+      </form>
+<!-- ------------------------------------------------------------------------------ -->
+      <a id="sw_reg" href="#" class="popup__switch popup__switch_signin"><span id="regtxt" class="popup__name-input">или&ensp;</span>Зарегистрироваться</a>
+      <a id="sw_login" href="#" class="popup__switch popup__switch_reg"><span id="logintxt" class="popup__name-input">или&ensp;</span>Войти</a>
+    </div>
+  </div>
+
+</main>
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy;&nbsp;2020.&nbsp;Supersite, Powered by News API</p>
+    <nav class="footer__nav">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a href="#" class="footer__link">Главная</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://praktikum.yandex.ru/" class="footer__link" target="_blank">Яндекс.Практикум</a>
+        </li>
+        <li class="footer__item">
+          <a href="https://github.com/" target="_blank" class="footer__link">
+            <img src="<%=require('./images/git.png').default%>" alt="логотип гитхаб" />
+          </a>
+        </li>
+        <li class="footer__item">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__link"><img src="<%=require('./images/fb.png').default%>" alt="логотип facebook" /></a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>
