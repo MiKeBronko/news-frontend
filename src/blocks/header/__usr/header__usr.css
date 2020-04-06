@@ -1,5 +1,6 @@
 @import url(./_login/header__usr_login.css);
 @import url(./_main/header__usr_main.css);
+@import url(./_mobile/header__usr_mobile.css);
 
 .header__usr {
   border: 1px solid #fff;
@@ -8,9 +9,9 @@
   width: 112px;
   height: 48px;
 
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'inter' ;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   display: flex;

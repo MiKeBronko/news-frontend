@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
 const isDev = process.env.NODE_ENV === 'development';
+// const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
@@ -29,6 +30,10 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      // {
+      //   test: /\.html$/i,
+      //   loader: 'html-loader',
+      // },
       {
         test: /\.css$/i,
         use: [
@@ -40,17 +45,22 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
         use: [
-          // isDev ? 'file-loader?name=./images/[name].[ext]' :
-          // 'file-loader?name=./images/[name].[ext]',
-          // isDev ? 'file-loader?name=
-          // ./images/[name].[ext]' : 'file-loader?name=images/[name].[ext]',
           {
             loader: 'file-loader',
             options: {
               name: './images/[name].[ext]',
-              publicPath: '../',
+              // esModule: false,
             },
           },
+          // isDev ? 'file-loader?name=./images/[name].[ext]'
+          //   : 'file-loader?name=./images/[name].[ext]',
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     path: path.resolve(__dirname, 'dist'),
+          //     name: 'images/[name].[ext]',
+          //   },
+          // },
           {
             loader: 'image-webpack-loader',
             options: {
@@ -84,7 +94,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '../vendor/fonts/[name].[ext]',
+              name: './vendor/fonts/[name].[ext]',
             },
           },
         ],

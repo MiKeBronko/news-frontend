@@ -2,12 +2,12 @@
 @import url(./_signin/popup__switch_signin.css);
 
 .popup__switch {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Roboto Slab';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
+  align-self: center;
   color: #2f72e5;
   /* margin-left:auto;
   margin-right:auto; */

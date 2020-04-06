@@ -3,7 +3,7 @@
 @import url(./__nav/footer__nav.css);
 
 .footer {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'inter' ;
   display: flex;
   align-items: center;
   align-content: center;

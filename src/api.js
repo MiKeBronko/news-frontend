@@ -1,4 +1,4 @@
-import { form } from './valid';
+import { form } from './valid_valid';
 
 export const serverUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:3000';
 

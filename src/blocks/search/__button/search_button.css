@@ -4,6 +4,10 @@
   background: #347eff;
 }
 
+.search__button:active {
+  background: #2a65cc;
+}
+
 /* .search__input:active {
   background: #2A65CC;
 } */

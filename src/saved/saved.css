@@ -1,10 +1,12 @@
-@import url(.././vendor/fonts.css);
-@import url(.././vendor/normalize.css);
-@import url(.././blocks/header/header.css);
-@import url(.././blocks/saved/saved.css);
-@import url(.././blocks/saved-list/saved-list.css);
-@import url(.././blocks/card/card.css);
-@import url(.././blocks/footer/footer.css);
+@import url(../vendor/fonts.css);
+@import url(../vendor/normalize.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/saved/saved.css);
+@import url(../blocks/saved-list/saved-list.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/panel-mobile/panel-mobile.css);
 
 body {
   width: 100%;

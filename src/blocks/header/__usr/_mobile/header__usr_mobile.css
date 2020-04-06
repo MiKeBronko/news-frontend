@@ -1,0 +1,23 @@
+.header__usr.header__usr_mobile {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 288px;
+    height: 48px;
+    font-family: 'Roboto', 'inter' ;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+
+@media screen and (min-width: 700px) {
+  .header__usr.header__usr.header__usr_mobile {
+    display: none;
+  }
+}

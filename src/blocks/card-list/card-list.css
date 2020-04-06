@@ -1,5 +1,6 @@
 .card-list {
   display: grid;
+  display: -ms-grid;
   justify-content: center;
 }
 
@@ -7,6 +8,7 @@
   .card-list {
     width: 1232px;
     grid-template-columns: repeat(3, 400px);
+    -ms-grid-columns: 400px 16px 400px 16px 400px 16px;
     column-gap: 16px;
     row-gap: 16px;
     margin: 63px auto 58px auto;

@@ -1,5 +1,53 @@
-@import url(./fonts/roboto/roboto-fontface.css);
-@import url(./fonts/roboto-slab/roboto-slab-fontface.css);
-@import url(./fonts/inter/inter_fontface.css);
-@import url(./fonts/source-sans-pro/sourcesanspro.css);
+@font-face {
+  font-family: 'Roboto', 'inter' ;
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/roboto-medium-webfont.woff') format('woff');
+}
 
+@font-face {
+  font-family: 'Roboto', 'inter' ;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/roboto-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab', 'inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/robotoslab-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab', 'inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/RobotoSlab-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/SourceSansPro-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter', 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto', 'inter' ;
+  src: url('./fonts/Roboto-Regular.woff2') format('woff2'), url('./fonts/Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('./fonts/Roboto-Regular.woff2') format('woff2'), url('./fonts/Roboto-Regular.woff') format('woff');
+}

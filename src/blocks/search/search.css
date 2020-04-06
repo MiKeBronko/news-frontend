@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-evenly;
   /* overflow: hidden; */
+  position: fixed;
   position: relative;
   top: 0;
   z-index: 1;

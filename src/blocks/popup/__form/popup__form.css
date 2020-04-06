@@ -1,9 +1,10 @@
 @import url(./_login/popup__form_login.css);
-@import url(./_signup/popup__form_signup.css);
+@import url(./_reg/popup__form_reg.css);
 
 .popup__form {
   width: 358px;
   margin-top: 22px;
+  display: none;
 }
 
 
