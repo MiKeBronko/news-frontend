@@ -1,6 +1,6 @@
 {
   "name": "newsfrontend",
-  "homepage": "git@github.com:MiKeBronko/news-frontend.git",
+  "homepage": "https://github.com/MiKeBronko/news-frontend.git",
   "version": "0.0.1",
   "description": "news viewer",
   "main": "main.js",
