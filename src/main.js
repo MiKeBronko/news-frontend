@@ -1,6 +1,6 @@
 import './main.css';
 
-import { Popup } from './popup';
+import { Popup } from './js/components/popup';
 
 import {
   form, handleValidate,
@@ -10,12 +10,24 @@ import {
   formReg, handleValidateReg,
 } from './valid_reg';
 
+import api from './js/api/MainApi';
 
 const lPopup = new Popup('.popup', 'popup_is-opened', '.popup__close');
 document.querySelector('.content').addEventListener('click', (event) => {
   if (event.target.classList.contains('popup_is-opened')) {
     lPopup.close();
   }
+});
+
+document.querySelector('.popup__button_reg').addEventListener('click', (event) => {
+  event.preventDefault();
+  api.signup();
+});
+
+document.querySelector('.popup__button_login').addEventListener('click', (event) => {
+  event.preventDefault();
+  console.log(formReg.elements.email.value);
+  api.signin();
 });
 
 

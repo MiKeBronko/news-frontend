@@ -2,7 +2,7 @@ const { form } = document.forms;
 
 const email = document.querySelector('.popup__input-email');
 const sample = document.querySelector('.popup__input-sample');
-const submit = document.querySelector('.popup__button_login');
+export const submit = document.querySelector('.popup__button_login');
 
 
 const emailRegExp = /^\w+([^.-][\w]+)*@([A-Za-z0-9]+)(-[A-Za-z0-9]+)*\.[A-Za-z]{2,3}$/;

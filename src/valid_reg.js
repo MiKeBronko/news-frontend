@@ -8,9 +8,10 @@ const submitReg = document.querySelector('.popup__button_reg');
 
 const emailRegExp = /^\w+([^.-][\w]+)*@([A-Za-z0-9]+)(-[A-Za-z0-9]+)*\.[A-Za-z]{2,3}$/;
 
-const passRegExp = /(?=^.{4,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+const passRegExp = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 
-const nameRegExp = /^([А-ЯЁ][а-яё]+)(-[А-ЯЁ][а-яё]+)?$/;
+// const nameRegExp = /^([А-ЯЁ][а-яё]+)(-[А-ЯЁ][а-яё]+)?$/;
+const nameRegExp = /^([A-z][a-z]+)(-[A-z][a-z]+)?$/;
 
 function setError() {
   submitReg.setAttribute('disabled', true);

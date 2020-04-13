@@ -1,6 +1,6 @@
-import { form } from './valid_valid';
+import { formReg } from './valid_reg';
 
-export const serverUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:3000';
+export const serverUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'https://newsviewer.ml';
 
 export class Api {
   constructor({ baseURL }, options) {
@@ -10,15 +10,15 @@ export class Api {
 
   newUser() {
     return fetch(`${this.baseURL}/signup`, {
-      method: 'POST',
       // headers: this.headers,
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: document.forms.form.elements.email.value,
-        password: document.forms.form.elements.sample.value,
-        name: document.forms.form.elements.name.value,
+        email: document.formReg.elements.email.value,
+        password: document.formReg.elements.sample.value,
+        name: document.formReg.elements.name.value,
       }),
     })
       .then((res) => {
@@ -33,6 +33,9 @@ export class Api {
       });
   }
 }
+
+
+
 
 export const api = new Api(
   serverUrl,
