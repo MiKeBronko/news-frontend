@@ -1,10 +1,6 @@
-export default class Article {
-  constructor(name, link) {
-    this.articleElement = this.create(name, link);
-  }
-
-  static like(event) {
-    event.target.classList.toggle('place-card__like-icon_liked');
+export default class NewsCard {
+  constructor(name, img, content, link, date) {
+    this.newsCardElement = this.create(name, img, content, link, date);
   }
 
   static save(event) {
@@ -17,9 +13,9 @@ export default class Article {
     card.parentNode.removeChild(card);
   }
 
-  create() {
+  create(nameValue, imgValue, contentValue, linkValue, dateValue) {
     const cardItem = document.createElement('div');
-    const cardTitle = document.createElement('h3');
+    const cardName = document.createElement('h3');
     const cardImage = document.createElement('img');
     const cardIcon = document.createElement('button');
     const cardTooltip = document.createElement('p');
@@ -29,7 +25,7 @@ export default class Article {
     const cardSource = document.createElement('span');
 
     cardItem.classList.add('card');
-    cardTitle.classList.add('title card__title');
+    cardName.classList.add('title card__title');
     cardImage.classList.add('card__image');
     cardIcon.classList.add('card__icon-bookmark');
     cardTooltip.classList.add('card__tooltip');
@@ -39,7 +35,7 @@ export default class Article {
     cardSource.classList.add('card__resource');
 
     cardItem.appendChild(cardImage);
-    cardItem.appendChild(cardTitle);
+    cardItem.appendChild(cardName);
     cardItem.appendChild(cardImage);
     cardItem.appendChild(cardIcon);
     cardItem.appendChild(cardTooltip);
@@ -49,7 +45,10 @@ export default class Article {
     cardItem.appendChild(cardSource);
 
     cardName.textContent = this.nameValue;
-    cardBackground.style.backgroundImage = `url(${linkValue})`;
+    cardDate.textContent = this.dateValue;
+    cardText.textContent = this.contentValue;
+    cardSource.textContent = this.linkValue
+    cardBackground.style.backgroundImage = `url(${imgValue})`;
     return cardItem;
   }
 }

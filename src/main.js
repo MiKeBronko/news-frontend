@@ -1,6 +1,6 @@
 import './main.css';
 
-import { Popup } from './js/components/popup';
+import { Popup } from './js/components/Popup';
 
 import {
   form, handleValidate,
@@ -10,7 +10,15 @@ import {
   formReg, handleValidateReg,
 } from './valid_reg';
 
-import api from './js/api/MainApi';
+import api from './js/utils/request';
+
+import { News } from './js/api/NewsApi';
+
+
+
+const findUser = document.querySelector('.search__input');
+
+// const date = new Date();
 
 const lPopup = new Popup('.popup', 'popup_is-opened', '.popup__close');
 document.querySelector('.content').addEventListener('click', (event) => {
@@ -19,6 +27,8 @@ document.querySelector('.content').addEventListener('click', (event) => {
   }
 });
 
+const news = new News();
+
 document.querySelector('.popup__button_reg').addEventListener('click', (event) => {
   event.preventDefault();
   api.signup();
@@ -26,7 +36,6 @@ document.querySelector('.popup__button_reg').addEventListener('click', (event) =
 
 document.querySelector('.popup__button_login').addEventListener('click', (event) => {
   event.preventDefault();
-  console.log(formReg.elements.email.value);
   api.signin();
 });
 
@@ -65,6 +74,7 @@ document.querySelector('.search__button').addEventListener('click', () => {
   if (!search) {
     document.getElementById('preloader').style.display = 'block';
   } else {
+    news.getNews();
     document.getElementById('result').style.display = 'none';
     document.getElementById('preloader').style.display = 'block';
     setTimeout(tempOpen, 1000);
@@ -137,12 +147,12 @@ document
     document.getElementById('sw_login').style.display = 'none';
   });
 
-document.querySelector('.header__usr').addEventListener('click', () => {
-  document.querySelector('.header__nav').classList.remove('header__nav_login');
-  document.querySelector('.header__article').classList.remove('header__article_visible');
-  document.querySelector('.header__usr').classList.remove('header__usr_main');
-  document.querySelector('.header__authorization').classList.add('header__authorization_visible');
-});
+// document.querySelector('.header__usr').addEventListener('click', () => {
+//   document.querySelector('.header__nav').classList.remove('header__nav_login');
+//   document.querySelector('.header__article').classList.remove('header__article_visible');
+//   document.querySelector('.header__usr').classList.remove('header__usr_main');
+//   document.querySelector('.header__authorization').classList.add('header__authorization_visible');
+// });
 
 document.querySelector('.header__usr_mobile').addEventListener('click', () => {
   document.querySelector('.header__auth-mobile').classList.add('header__auth-mobile_visible');
@@ -150,9 +160,9 @@ document.querySelector('.header__usr_mobile').addEventListener('click', () => {
   document.querySelector('.header__article_mobile').classList.remove('header__article_mobile');
 });
 
-document.querySelector('.header__main_visible').addEventListener('click', () => {
-  document.querySelector('.header__nav').classList.add('header__nav_login');
-  document.querySelector('.header__article').classList.add('header__article_visible');
-  document.querySelector('.header__usr').classList.add('header__usr_main');
-  document.querySelector('.header__authorization').classList.remove('header__authorization_visible');
-});
+// document.querySelector('.header__main_visible').addEventListener('click', () => {
+//   document.querySelector('.header__nav').classList.add('header__nav_login');
+//   document.querySelector('.header__article').classList.add('header__article_visible');
+//   document.querySelector('.header__usr').classList.add('header__usr_main');
+//   document.querySelector('.header__authorization').classList.remove('header__authorization_visible');
+// });

@@ -1,35 +1,44 @@
 const NewsAPI = require('newsapi');
 
-const newsapi = new NewsAPI('41ea6e720ebb4607a8f5e1bf3877e329');
+const newsapi = new NewsAPI('someKey');
 
-newsapi.v2.everything({
+const API_KEY = 'some_key';
+
+
+const q = newsapi.v2.everything({
   q: 'bitcoin',
-  sources: 'bbc-news,the-verge',
-  domains: 'bbc.co.uk, techcrunch.com',
   from: '2017-12-01',
   to: '2017-12-12',
-  language: 'ru',
+  language: 'en',
   sortBy: 'relevancy',
-  page: 100,
-}).then((response) => {
-  console.log(response);
-  /*
-    {
-      status: "ok",
-      articles: [...]
+  page: 2
+})
+
+export class News {
+  constructor(qq) {
+    this.qq = q;
+    console.log(this.qq);
+  }
+  getNews() {
+    return fetch(`https://newsapi.org/v2/everything?${this.qq}&apiKey=API_KEY`,{
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log("Ошибка. Запрос не выполнен - user");
+      });
     }
-  */
-});
+}
 
-const url = 'http://newsapi.org/v2/everything?'
-          + 'q=Apple&'
-          + 'from=2020-04-13&'
-          + 'sortBy=popularity&'
-          + 'apiKey=41ea6e720ebb4607a8f5e1bf3877e329';
+export default News;
 
-const req = new Request(url);
-
-fetch(req)
-  .then((response) => {
-    console.log(response.json());
-  });
+ 

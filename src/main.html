@@ -14,8 +14,25 @@
   <header class="header">
     <a href="./" alt="news viewer logo" class="header__logo">NewsExplorer</a>
     <nav class="header__nav header__nav_login">
+        <a href="#" class="header__main header__main_visible">Главная</a>
+        <a href="./saved/saved.html" class="header__article header__article_visible">Сохранённые статьи</a>
+        <a href="#" class="header__usr header__usr_main">Грета&ensp;
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#fff"/>
+          </svg>
+        </a>
+        <a href="#" class="header__authorization">Авторизоваться</a>
+
+          <div class="header__nav-mobile">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="16" height="2" fill="#fff"/>
+            <rect x="4" y="14" width="16" height="2" fill="#fff"/>
+          </svg>
+        </div>
+    </nav>
+    <!-- <nav class="header__nav header__nav_login">
       <a href="#" class="header__main header__main_visible">Главная</a>
-      <!-- <hr class="header__nav-focus"> -->
+      <hr class="header__nav-focus">
         <a href="./saved/saved.html" class="header__article header__article_visible">Сохранённые статьи</a>
         <a href="#" class="header__usr header__usr_main">Грета&ensp;<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#fff"/>
           </svg>
@@ -27,7 +44,7 @@
             <rect x="4" y="14" width="16" height="2" fill="#fff"/>
           </svg>
         </div>
-      </nav>
+    </nav> -->
 
       <nav class="panel-mobile">
         <img src="<%=require('./images/close-mid.svg').default%>" class="panel-mobile__close" alt="иконка закрытия формы" />
