@@ -1,44 +1,41 @@
-const NewsAPI = require('newsapi');
-
-const newsapi = new NewsAPI('someKey');
-
-const API_KEY = 'some_key';
-
-
-const q = newsapi.v2.everything({
-  q: 'bitcoin',
-  from: '2017-12-01',
-  to: '2017-12-12',
-  language: 'en',
-  sortBy: 'relevancy',
-  page: 2
-})
+const API_KEY = '41ea6e720ebb4607a8f5e1bf3877e329';
 
 export class News {
-  constructor(qq) {
-    this.qq = q;
-    console.log(this.qq);
+  constructor() {
+    this.apiLink = 'https://newsapi.org/v2/everything?';
   }
-  getNews() {
-    return fetch(`https://newsapi.org/v2/everything?${this.qq}&apiKey=API_KEY`,{
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+
+  getNews(queryVal, dateFromVal, dateToVal, pageSizeVal) {
+    return fetch(
+      `${this.apiLink}q=${queryVal}&from=${dateFromVal}&to=${dateToVal}&pageSize=${pageSizeVal}&apiKey=${API_KEY}`,
+    )
       .then((res) => {
         if (res.ok) {
+          console.log(res.json);
           return res.json();
         }
         return Promise.reject(new Error(`Ошибка: ${res.status}`));
       })
       .catch((err) => {
         console.log(err);
-        console.log("Ошибка. Запрос не выполнен - user");
+        console.log('Ошибка. Запрос не выполнен ');
       });
-    }
+  }
 }
 
 export default News;
 
- 
+// from Haz(R)
+// getNews(query) {
+//   const { sortBy, pageSize, apiKey } = this._apiParams;
+//   const { formatCurrentDate, formatWeekBeforeDate } = this._apiDependecies;
+//   const dateTo = formatCurrentDate();
+//   const dateFrom = formatWeekBeforeDate();
+//   return fetch(
+//
+// `${this._apiLink}q=${query}&from=
+// ${dateFrom}&to=${dateTo}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${apiKey}`,
+//   )
+//     .then((resp) => resp.json())
+//     .catch((err) => new Error(err.message));
+// }

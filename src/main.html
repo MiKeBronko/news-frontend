@@ -162,13 +162,25 @@
       </div>
   </section>
 
-  <div class="popup">
-
+  <!-- <div class="popup">
     <div class="popup__content">
        <h3 class="popup__title">Вход</h3>
-      <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" />
-<!-- ------------------------------------------LOGIN------------------------------------ -->
-      <form class="popup__form-login popup__form-login_visible" name="form">
+      <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" /> -->
+
+    <div class="popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" />
+        <!-- <div class="popup__content">
+
+        </div> -->
+
+        <a id="sw_reg" href="#" class="popup__switch popup__switch_signin"><span id="regtxt" class="popup__name-input">или&ensp;</span>Зарегистрироваться</a>
+        <a id="sw_login" href="#" class="popup__switch popup__switch_reg"><span id="logintxt" class="popup__name-input">или&ensp;</span>Войти</a>
+      <!-- </div> -->
+    </div>
+
+<template class="popup-login">
+  <form class="popup__form-login popup__form-login_visible" name="form">
         <label class="popup__field popup__name-input">
           <span id="name-iput" class="name-iput">Email</span>
           <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
@@ -182,8 +194,26 @@
           <span id="success-message" class="popup__err-message popup__err-message_hidden">any key</span>
           <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
       </form>
+</template>
+
+<!-- ------------------------------------------LOGIN------------------------------------ -->
+
+      <!-- <form class="popup__form-login popup__form-login_visible" name="form">
+        <label class="popup__field popup__name-input">
+          <span id="name-iput" class="name-iput">Email</span>
+          <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
+          <span id="error-email" class="popup__err-message"></span>
+        </label>
+        <label class="popup__field">
+          <span id="name-iput" class="popup__name-input">Пароль</span>
+          <input  id="sample" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
+          <span id="error-sample" class="popup__err-message"></span>
+        </label>
+          <span id="success-message" class="popup__err-message popup__err-message_hidden">any key</span>
+          <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
+      </form> -->
 <!-- ------------------------------------------REGIST------------------------------------ -->
-      <form class="popup__form-reg" name="formReg">
+      <!-- <form class="popup__form-reg" name="formReg">
         <label class="popup__field popup__name-input">
           <span id="name-iput" class="name-iput">Email</span>
           <input id="emailReg" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email_reg">
@@ -193,7 +223,7 @@
           <span id="name-iput" class="popup__name-input">Пароль</span>
           <input  id="sampleReg" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample_reg">
           <span id="error-sampleReg" class="popup__err-message"></span>
-        </label>
+        </label> -->
         <!-- <label class="popup__field popup__name-input">
            <span id="name-iput" class="name-iput">Email</span>
            <input id="email" type="email" name="email" placeholder="Введите почту" class="popup__input popup__input-email">
@@ -204,19 +234,16 @@
           <input  id="sample" type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
           <span id="error-sample" class="popup__err-message"></span>
         </label> -->
-        <label class="popup__field">
+        <!-- <label class="popup__field">
           <span id="name-iput" class="popup__name-input">Имя</span>
           <input  id="name" type="text" name="name" class="popup__input popup__input-username" placeholder="Введите своё имя">
           <span id="error-name" class="popup__err-message"></span>
         </label>
           <span id="success-message" class="popup__err-message popup__err-message_hidden">Такой пользователь уже есть</span>
           <button id="submit" name='sign' type="button" class="button popup__button  popup__button_reg" disabled=true>Зарегистрироваться</button>
-      </form>
+      </form> -->
 <!-- ------------------------------------------------------------------------------ -->
-      <a id="sw_reg" href="#" class="popup__switch popup__switch_signin"><span id="regtxt" class="popup__name-input">или&ensp;</span>Зарегистрироваться</a>
-      <a id="sw_login" href="#" class="popup__switch popup__switch_reg"><span id="logintxt" class="popup__name-input">или&ensp;</span>Войти</a>
-    </div>
-  </div>
+
 
 </main>
 

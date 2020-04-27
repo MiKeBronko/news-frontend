@@ -1,24 +1,24 @@
 import './main.css';
 
-import { Popup } from './js/components/Popup';
+import { Popup } from './js/components/popup';
 
-import {
-  form, handleValidate,
-} from './valid_login';
+// import {
+//   form, handleValidate,
+// } from './valid_login';
 
-import {
-  formReg, handleValidateReg,
-} from './valid_reg';
+// import {
+//   formReg, handleValidateReg,
+// } from './valid_reg';
 
 import api from './js/utils/request';
 
 import { News } from './js/api/NewsApi';
 
-
-
 const findUser = document.querySelector('.search__input');
 
-// const date = new Date();
+const date = new Date();
+
+const news = new News();
 
 const lPopup = new Popup('.popup', 'popup_is-opened', '.popup__close');
 document.querySelector('.content').addEventListener('click', (event) => {
@@ -27,54 +27,59 @@ document.querySelector('.content').addEventListener('click', (event) => {
   }
 });
 
-const news = new News();
 
-document.querySelector('.popup__button_reg').addEventListener('click', (event) => {
-  event.preventDefault();
-  api.signup();
-});
+// document.querySelector('.popup__button_reg').addEventListener('click', (event) => {
+//   event.preventDefault();
+//   api.signup();
+// });
 
-document.querySelector('.popup__button_login').addEventListener('click', (event) => {
-  event.preventDefault();
-  api.signin();
-});
+// document.querySelector('.popup__button_login').addEventListener('click', (event) => {
+//   event.preventDefault();
+//   api.signin();
+// });
 
 
-form.addEventListener('keyup', (event) => {
-  handleValidate(event.target);
-});
+// form.addEventListener('keyup', (event) => {
+//   handleValidate(event.target);
+// });
 
-formReg.addEventListener('focusout', (event) => {
-  const evn = event || window.event;
-  evn.target.style.borderBottom = '1px solid rgba(0, 0, 0, .2)';
-});
-formReg.addEventListener('keyup', (event) => {
-  const evt = event || window.event;
-  evt.target.style.borderBottom = '1px solid #000';
-  handleValidateReg(evt.target);
-});
+// formReg.addEventListener('focusout', (event) => {
+//   const evn = event || window.event;
+//   evn.target.style.borderBottom = '1px solid rgba(0, 0, 0, .2)';
+// });
+// formReg.addEventListener('keyup', (event) => {
+//   const evt = event || window.event;
+//   evt.target.style.borderBottom = '1px solid #000';
+//   handleValidateReg(evt.target);
+// });
 
 function tempOpen() {
   document.getElementById('preloader').style.display = 'none';
   document.getElementById('result').style.display = 'flex';
 }
 
-function search() {
-  if (document.querySelector('.search__input').value.length === 0) {
-    document.querySelector('.search__button').setAttribute('disabled', true);
-    return false;
-  } if (document.querySelector('.search__input').value.length !== 0) {
-    document.querySelector('.search__button').removeAttribute('disabled', true);
-    return true;
-  }
-  return search();
-}
+// function search() {
+//   if (document.querySelector('.search__input').value.length === 0) {
+//     document.querySelector('.search__button').setAttribute('disabled', true);
+//     return false;
+//   } if (document.querySelector('.search__input').value.length !== 0) {
+//     document.querySelector('.search__button').removeAttribute('disabled', true);
+//     return true;
+//   }
+//   return search();
+// }
 
 document.querySelector('.search__button').addEventListener('click', () => {
+  let dateStart = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+  let dateEnd = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+
+  console.log(`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`);
+  console.log(findUser.value);
   if (!search) {
     document.getElementById('preloader').style.display = 'block';
   } else {
-    news.getNews();
+    news.getNews(findUser.value, dateStart, dateEnd, '100');
     document.getElementById('result').style.display = 'none';
     document.getElementById('preloader').style.display = 'block';
     setTimeout(tempOpen, 1000);

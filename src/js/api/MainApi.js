@@ -1,35 +1,34 @@
-import { formReg } from "../../valid_reg";
-import { form } from "../../valid_login";
-import { formData } from "../const/formInputs";
+// import { formReg } from '../../valid_reg';
+// import { form } from '../../valid_login';
+// import { formData } from '../const/formInputs';
 
 // export const serverUrl = process.env.NODE_ENV === 'development' ? 'https://api.newsviewer.ml/api/signup' : 'https://newsviewer.ml';
 
 // export const serverUrl = 'http://localhost:3000/signup';
 export const serverUrl = [
-  "https://api.newsviewer.ml/api/signup",
-  "https://newsviewer.ml/api",
+  'https://api.newsviewer.ml/api/signup',
+  'https://newsviewer.ml/api',
 ];
 
 export class Api {
   constructor(baseURL, options) {
     this.baseURL = serverUrl;
     this.headers = options.headers;
-
   }
 
   signup() {
     return fetch(this.baseURL[0], {
       // headers: this.headers,
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       // body: JSON.stringify({
       //   email: formReg.elements.email.value,
       //   password: formReg.elements.sample.value,
       //   name: formReg.elements.name.value,
       // }),
-    })
+    });
   //     .then((res) => {
   //       if (res.ok) {
   //         // console.log(res.json());
@@ -41,19 +40,19 @@ export class Api {
   //       // console.log(err);
   //       console.log("Ошибка. Запрос не выполнен - signup");
   //     });
-   }
+  }
 
   signin() {
     return fetch(`${this.baseURL[1]}/signin`, {
       // headers: this.headers,
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       // body: JSON.parse(formData),
       body: JSON.stringify({
-        email: form.elements.email.value,
-        password: form.elements.sample.value,
+        // email: form.elements.email.value,
+        // password: form.elements.sample.value,
       }),
     })
       .then((res) => {
@@ -62,23 +61,23 @@ export class Api {
           return res.json();
         }
         return Promise.reject(
-          new Error(`Ошибка запроса signin: ${res.status}`)
+          new Error(`Ошибка запроса signin: ${res.status}`),
         );
       })
       .then((data) => {
-        localStorage.setItem("token", data.token);
+        localStorage.setItem('token', data.token);
       })
       .catch((err) => {
         console.log(err);
-        console.log("Ошибка. Запрос не выполнен - login");
+        console.log('Ошибка. Запрос не выполнен - login');
       });
   }
 
   getUser() {
     return fetch(`${this.baseURL[1]}/users/me`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`,
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -89,15 +88,15 @@ export class Api {
       })
       .catch((err) => {
         console.log(err);
-        console.log("Ошибка. Запрос не выполнен - user");
+        console.log('Ошибка. Запрос не выполнен - user');
       });
   }
 
   getArticles() {
     return fetch(`${this.baseURL}/articles`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`,
+        authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => {
@@ -108,7 +107,7 @@ export class Api {
       })
       .catch((err) => {
         console.log(err);
-        console.log("Ошибка. Запрос не выполнен - статья");
+        console.log('Ошибка. Запрос не выполнен - статья');
       });
   }
 }
