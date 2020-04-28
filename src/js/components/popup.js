@@ -1,8 +1,13 @@
-export class Popup {
-  constructor(namePopup, openClassName, closeClassName) {
+import Base from './Base';
+export class Popup extends Base {
+  constructor(namePopup, openClassName, closeClassName, content, template) {
     this.popup = document.querySelector(namePopup);
     this.openClassName = openClassName;
     this.closeClassName = closeClassName;
+    this.content = content;
+    this.template = template;
+    this.closeButton = close;
+
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.popup.querySelector(this.closeClassName)
@@ -10,30 +15,33 @@ export class Popup {
   }
 
 
-  create() {
+create() {
     this._content.appendChild(this._template.cloneNode(true).content);
     this._setEventListeners();
   }
 
-  _setEventListeners() {
-    // тут логика наложения обработчиков
+_setEventListeners() {
+  this.setListeners(([
+    { element: this.closeButton, event: 'click', callback: callb => this.close() },
+    { element: document, event: 'keydown', callback: evt => _handleKeydown(evt) },
+    ]))
   }
 
-  _handleKeydown(evt) {
+_handleKeydown(evt) {
     if (Number(evt.which) === 27 || evt.target.classList.contains(this.openClassName)) {
       this.close();
     }
   }
 
-  clear() {
+clear() {
     this._content.removeChild(this._template.cloneNode(true).content);
   }
 
-  open() {
+open() {
     this.popup.classList.add(this.openClassName);
   }
 
-  close() {
+close() {
     this.popup.classList.remove(this.openClassName);
   }
 }

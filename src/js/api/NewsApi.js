@@ -11,7 +11,6 @@ export class News {
     )
       .then((res) => {
         if (res.ok) {
-          console.log(res.json);
           return res.json();
         }
         return Promise.reject(new Error(`Ошибка: ${res.status}`));

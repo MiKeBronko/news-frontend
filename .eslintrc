@@ -7,6 +7,7 @@
   },
   "rules": {
     "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    // "no-underscore-dangle": ["error", { "allow": ["_id"] }, {"allowAfterThisConstructor": true }],
     "no-console": ["off"],
     "global-require": 0,
     "no-restricted-globals": ["error", "event", "fdescribe"]

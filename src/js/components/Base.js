@@ -4,7 +4,7 @@ class Base {
   }
 
   setListeners(eventObjects = []) {
-    EventSource.forEach(eventObject => this._SetEventListener(eventObject));
+    eventObjects.forEach(eventObject => this._SetEventListener(eventObject));
   }
 
   _SetEventListener({ element, event, cb }) {
@@ -12,7 +12,7 @@ class Base {
     this._listenetrs.push({ element, event, cb });
   }
 
-  _removeListeners() {
+  removeListeners() {
     this._listenetrs.forEach(({ element, event, cb }) => {
       element.removeEventListener(event, cb);
     });

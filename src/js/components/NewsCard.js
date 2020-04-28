@@ -1,54 +1,48 @@
+//  import { Base } from './Base';
+
 export default class NewsCard {
-  constructor(name, img, content, link, date) {
-    this.newsCardElement = this.create(name, img, content, link, date);
+  // constructor(source, title, dateEl, text, image) {
+  constructor(name, link) {
+    //  super();
+    this.name = name;
+    this.link = link;
+    this.cardElement=this.createCard(name, link);
+
+    //  this.source = source;
+    //  this.title = title;
+    //  this.dateEl = dateEl;
+    //  this.text = text;
+    //  this.image = image;
+      // this.cardElement = this.create(source, title, dateEl, text, image);
   }
 
-  static save(event) {
-    const card = event.target.closest('.card');
-    card.parentNode.appendChild(card);
-  }
-
-  static remove(event) {
-    const card = event.target.closest('.card');
-    card.parentNode.removeChild(card);
-  }
-
-  create(nameValue, imgValue, contentValue, linkValue, dateValue) {
+  createCard(nameValue, linkValue) {
     const cardItem = document.createElement('div');
     const cardName = document.createElement('h3');
-    const cardImage = document.createElement('img');
-    const cardIcon = document.createElement('button');
-    const cardTooltip = document.createElement('p');
-    const cardDate = document.createElement('span');
-    const cardArticle = document.createElement('span');
     const cardText = document.createElement('p');
-    const cardSource = document.createElement('span');
+
 
     cardItem.classList.add('card');
-    cardName.classList.add('title card__title');
-    cardImage.classList.add('card__image');
-    cardIcon.classList.add('card__icon-bookmark');
-    cardTooltip.classList.add('card__tooltip');
-    cardDate.classList.add('card__date');
-    cardArticle.classList.add('card__article');
-    cardText.classList.add('card__text');
-    cardSource.classList.add('card__resource');
+    cardName.classList.add('card__title');
+    cardText.classList.add('card__image');
 
-    cardItem.appendChild(cardImage);
     cardItem.appendChild(cardName);
-    cardItem.appendChild(cardImage);
-    cardItem.appendChild(cardIcon);
-    cardItem.appendChild(cardTooltip);
-    cardItem.appendChild(cardDate);
-    cardItem.appendChild(cardArticle);
     cardItem.appendChild(cardText);
-    cardItem.appendChild(cardSource);
 
-    cardName.textContent = this.nameValue;
-    cardDate.textContent = this.dateValue;
-    cardText.textContent = this.contentValue;
-    cardSource.textContent = this.linkValue
-    cardBackground.style.backgroundImage = `url(${imgValue})`;
+    // cardName.textContent = this.nameValue;
+    // cardText.textContent = this.linkValue;
     return cardItem;
   }
+  //static save(event) {
+    // const card = event.target.closest('.card');
+    // card.parentNode.appendChild(card);
+  //}
+
+ //static remove(event) {
+   // this._removeListeners();
+    // const card = event.target.closest('.card');
+    // card.parentNode.removeChild(card);
+ // }
+
 }
+
