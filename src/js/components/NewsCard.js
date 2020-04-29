@@ -2,11 +2,11 @@
 
 export default class NewsCard {
   // constructor(source, title, dateEl, text, image) {
-  constructor(name, link) {
+  constructor({ art }) {
     //  super();
     this.name = name;
-    this.link = link;
-    this.cardElement=this.createCard(name, link);
+    // this.link = link;
+    this.cardElement=this.createCard(name);
 
     //  this.source = source;
     //  this.title = title;
@@ -16,7 +16,7 @@ export default class NewsCard {
       // this.cardElement = this.create(source, title, dateEl, text, image);
   }
 
-  createCard(nameValue, linkValue) {
+  createCard({ art }) {
     const cardItem = document.createElement('div');
     const cardName = document.createElement('h3');
     const cardText = document.createElement('p');
@@ -29,8 +29,8 @@ export default class NewsCard {
     cardItem.appendChild(cardName);
     cardItem.appendChild(cardText);
 
-    // cardName.textContent = this.nameValue;
-    // cardText.textContent = this.linkValue;
+    // cardName.textContent = this.title;
+    // cardText.textContent = this.description;
     return cardItem;
   }
   //static save(event) {

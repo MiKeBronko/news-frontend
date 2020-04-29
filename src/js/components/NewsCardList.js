@@ -1,22 +1,24 @@
 import NewsCard from './NewsCard';
 
 export default class NewsCardList {
-  constructor(arr,container, createCard) {
+  constructor(arr, container, createCard) {
     this._arr = arr;
     this._container = container;
     this._createCard = createCard;
 
   }
 
-   addCard(name, link) {
-     const { cardElement }= this._createCard(name, link);
+   addCard(name) {
+    // addCard принимает экземпляр карточки и добавляет её в список
+     const { cardElement }= this._createCard(name);
     this._container.appendChild(cardElement);
   }
 
   renderCard() {
+    // renderResults принимает массив экземпляров карточек и отрисовывает их;
      this._arr.forEach((item) => {
     //this._arr.forEach(element => this._createCard({ element }));
-    return this.addCard(item.name, item.link);
+    return this.addCard(item.name);
      });
   }
 }
