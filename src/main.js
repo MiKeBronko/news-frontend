@@ -30,9 +30,9 @@ const findUser = document.querySelector('.search__input');
 
 
 
-const keyw = document.querySelector('.search__input');
+// const keyw = document.querySelector('.search__input');
 
-keyw.value = 'слово';
+// keyw.value = 'слово';
 
 const initialCards = [];
 const createCard = data => new NewsCard({ data });
