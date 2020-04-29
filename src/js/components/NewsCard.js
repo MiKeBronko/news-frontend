@@ -19,15 +19,33 @@ export default class NewsCard {
   createCard({ art }) {
     const cardItem = document.createElement('div');
     const cardName = document.createElement('h3');
+    const cardImage = document.createElement('img');
+    const cardIcon = document.createElement('button');
+    const cardTooltip = document.createElement('p');
+    const cardDate = document.createElement('span');
+    const cardArticle = document.createElement('span');
     const cardText = document.createElement('p');
-
+    const cardSource = document.createElement('span');
 
     cardItem.classList.add('card');
-    cardName.classList.add('card__title');
-    cardText.classList.add('card__image');
+    cardName.classList.add('title card__title');
+    cardImage.classList.add('card__image');
+    cardIcon.classList.add('card__icon-bookmark');
+    cardTooltip.classList.add('card__tooltip');
+    cardDate.classList.add('card__date');
+    cardArticle.classList.add('card__article');
+    cardText.classList.add('card__text');
+    cardSource.classList.add('card__resource');
 
+    cardItem.appendChild(cardImage);
     cardItem.appendChild(cardName);
+    cardItem.appendChild(cardImage);
+    cardItem.appendChild(cardIcon);
+    cardItem.appendChild(cardTooltip);
+    cardItem.appendChild(cardDate);
+    cardItem.appendChild(cardArticle);
     cardItem.appendChild(cardText);
+    cardItem.appendChild(cardSource);
 
     // cardName.textContent = this.title;
     // cardText.textContent = this.description;

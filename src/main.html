@@ -13,15 +13,15 @@
 
   <header class="header">
     <a href="./" alt="news viewer logo" class="header__logo">NewsExplorer</a>
-    <nav class="header__nav header__nav_login">
+    <nav class="header__nav">
         <a href="#" class="header__main header__main_visible">Главная</a>
-        <a href="./saved/saved.html" class="header__article header__article_visible">Сохранённые статьи</a>
-        <a href="#" class="header__usr header__usr_main">Грета&ensp;
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="./saved/saved.html" class="header__article">Сохранённые статьи</a>
+        <a href="#" class="header__usr">User&ensp;
+          <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z" fill="#fff"/>
-          </svg>
+          </svg></span>
         </a>
-        <a href="#" class="header__authorization">Авторизоваться</a>
+        <a href="#" class="header__authorization header__authorization_visible">Авторизоваться</a>
 
           <div class="header__nav-mobile">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,6 @@
   </header>
 
 <main class="content">
-
   <section class="search">
       <h1 class="title search__title">Что в мире творится?</h1>
         <h2 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
@@ -99,13 +98,23 @@
 
 
    </section>
-<!--
-  <template class="card-template">
-    <div class="card">
-      <h3 class="title card__title"></h3>
-      <img src="<%=require('./images/card1.png').default%>" alt="Картинка к статье" class="card__image" />
-    </div>
-  </template> -->
+   <div class="card">
+    <h3 class="title card__title">Национальное достояние – парки</h3>
+    <img src="<%=require('./images/card1.png').default%>" alt="Картинка к статье" class="card__image" />
+    <button class="card__icon-bookmark">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" fill="#C4C4C4" fill-opacity="0.4"/>
+        <path d="M5 4C5 3.44771 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V22L12 16.5L5 22V4Z" stroke-width="1"  stroke="#b6bcbf" fill="none"/>
+        </svg>
+    </button>
+    <!-- <p class="title card__keyword">Природа</p> -->
+    <p class="card__tooltip">Войдите, чтобы сохранять статьи</p>
+    <span class="card__date">2 августа, 2019</span>
+    <span class="card__article">
+      <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+    </span>
+    <span class="card__resource">Лента.ру</span>
+</div>
 
  <section class="author">
       <h4 class="title author__title">Об авторе</h4>
@@ -116,88 +125,57 @@
       </div>
   </section>
 
-  <!-- <div class="popup">
-    <div class="popup__content">
-       <h3 class="popup__title">Вход</h3>
-      <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" /> -->
 
-    <div class="popup">
-      <div class="popup__content">
-        <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" />
-        <!-- <div class="popup__content">
+      <div class="popup">
+        <div class="popup__content">
+           <h3 class="popup__title">Вход</h3>
+          <img src="<%=require('./images/close-mid.svg').default%>" class="popup__close" alt="иконка закрытия формы" />
+    <!-- -----------------------------------------LOGIN--------------->
+          <form class="popup__form-login popup__form-login_visible" name="form">
+            <label class="popup__field popup__name-input">
+              <span id="name-iput" class="name-iput">Email</span>
+              <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
+              <span id="error-email" class="popup__err-message"></span>
+            </label>
+            <label class="popup__field">
+              <span id="name-iput" class="popup__name-input">Пароль</span>
+              <input  id="sample" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
+              <span id="error-sample" class="popup__err-message"></span>
+            </label>
+              <span id="exist-message" class="popup__err-message popup__err-message_hidden">any key</span>
+              <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
+          </form>
+    <!-- ------------------------------------------REG------------->
+          <form class="popup__form-reg" name="formReg">
+            <label class="popup__field popup__name-input">
+              <span id="name-iput" class="name-iput">Email</span>
+              <input id="emailReg" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email_reg">
+              <span id="error-emailReg" class="popup__err-message"></span>
+            </label>
+            <label class="popup__field">
+              <span id="name-iput" class="popup__name-input">Пароль</span>
+              <input  id="sampleReg" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample_reg">
+              <span id="error-sampleReg" class="popup__err-message"></span>
+            </label>
+            <label class="popup__field">
+              <span id="name-iput" class="popup__name-input">Имя</span>
+              <input  id="name" type="text" name="name" class="popup__input popup__input-username" placeholder="Введите своё имя">
+              <span id="error-name" class="popup__err-message"></span>
+            </label>
+              <span id="success-message" class="popup__err-message popup__err-message_hidden">Такой пользователь уже есть</span>
+              <button id="submit" name='sign' type="button" class="button popup__button popup__button_reg" disabled=true>Зарегистрироваться</button>
+          </form>
+           <!-- ---------------------------------------RegOk------------->
+           <form class="popup__form-ok" name="formOk">
+              <p class="popup__form-text">Пользователь успешно зарегистрирован&excl;</p>
+              <a href="#" class="popup__switch"><span id="logintxt" class="popup__switch popup__form-enter_visible">Выполнить вход</a>
+          </form>
+    <!-- ------------------------------------------------------------->
+          <a id="sw_reg" href="#" class="popup__switch popup__switch_signin"><span id="regtxt" class="popup__name-input">или&ensp;</span>Зарегистрироваться</a>
+          <a id="sw_login" href="#" class="popup__switch popup__switch_reg"><span id="logintxt" class="popup__name-input">или&ensp;</span>Войти</a>
+        </div>
+      </div>
 
-        </div> -->
-
-        <a id="sw_reg" href="#" class="popup__switch popup__switch_signin"><span id="regtxt" class="popup__name-input">или&ensp;</span>Зарегистрироваться</a>
-        <a id="sw_login" href="#" class="popup__switch popup__switch_reg"><span id="logintxt" class="popup__name-input">или&ensp;</span>Войти</a>
-      <!-- </div> -->
-    </div>
-
-<template class="popup-login">
-  <form class="popup__form-login popup__form-login_visible" name="form">
-        <label class="popup__field popup__name-input">
-          <span id="name-iput" class="name-iput">Email</span>
-          <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
-          <span id="error-email" class="popup__err-message"></span>
-        </label>
-        <label class="popup__field">
-          <span id="name-iput" class="popup__name-input">Пароль</span>
-          <input  id="sample" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
-          <span id="error-sample" class="popup__err-message"></span>
-        </label>
-          <span id="success-message" class="popup__err-message popup__err-message_hidden">any key</span>
-          <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
-      </form>
-</template>
-
-
-<!-- ------------------------------------------LOGIN------------------------------------ -->
-
-      <!-- <form class="popup__form-login popup__form-login_visible" name="form">
-        <label class="popup__field popup__name-input">
-          <span id="name-iput" class="name-iput">Email</span>
-          <input id="email" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email">
-          <span id="error-email" class="popup__err-message"></span>
-        </label>
-        <label class="popup__field">
-          <span id="name-iput" class="popup__name-input">Пароль</span>
-          <input  id="sample" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
-          <span id="error-sample" class="popup__err-message"></span>
-        </label>
-          <span id="success-message" class="popup__err-message popup__err-message_hidden">any key</span>
-          <button id="submit" name='sign' type="button" class="button popup__button popup__button_login" disabled=true>Войти</button>
-      </form> -->
-<!-- ------------------------------------------REGIST------------------------------------ -->
-      <!-- <form class="popup__form-reg" name="formReg">
-        <label class="popup__field popup__name-input">
-          <span id="name-iput" class="name-iput">Email</span>
-          <input id="emailReg" type="email" required name="email" placeholder="Введите почту" class="popup__input popup__input-email_reg">
-          <span id="error-emailReg" class="popup__err-message"></span>
-        </label>
-        <label class="popup__field">
-          <span id="name-iput" class="popup__name-input">Пароль</span>
-          <input  id="sampleReg" required type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample_reg">
-          <span id="error-sampleReg" class="popup__err-message"></span>
-        </label> -->
-        <!-- <label class="popup__field popup__name-input">
-           <span id="name-iput" class="name-iput">Email</span>
-           <input id="email" type="email" name="email" placeholder="Введите почту" class="popup__input popup__input-email">
-           <span id="error-email" class="popup__err-message"></span>
-        </label>
-        <label class="popup__field">
-          <span id="name-iput" class="popup__name-input">Пароль</span>
-          <input  id="sample" type="password"  name="sample" placeholder="Введите пароль" class="popup__input popup__input-sample">
-          <span id="error-sample" class="popup__err-message"></span>
-        </label> -->
-        <!-- <label class="popup__field">
-          <span id="name-iput" class="popup__name-input">Имя</span>
-          <input  id="name" type="text" name="name" class="popup__input popup__input-username" placeholder="Введите своё имя">
-          <span id="error-name" class="popup__err-message"></span>
-        </label>
-          <span id="success-message" class="popup__err-message popup__err-message_hidden">Такой пользователь уже есть</span>
-          <button id="submit" name='sign' type="button" class="button popup__button  popup__button_reg" disabled=true>Зарегистрироваться</button>
-      </form> -->
-<!-- ------------------------------------------------------------------------------ -->
 
 
 </main>

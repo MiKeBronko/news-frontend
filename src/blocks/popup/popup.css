@@ -3,6 +3,7 @@
 @import url(./__title/popup__title.css);
 @import url(./__form-login/popup__form-login.css);
 @import url(./__form-reg/popup__form-reg.css);
+@import url(./__form-ok/popup__form-ok.css);
 @import url(./__input/popup__input.css);
 @import url(./__button/popup__button.css);
 @import url(./_is-opened/popup_is-opened.css);
@@ -11,6 +12,7 @@
 @import url(./__field/popup__field.css);
 @import url(./__name-input/popup__name-input.css);
 @import url(./__switch/popup__switch.css);
+@import url(./__form-text/popup__form-text.css);
 
 .popup {
   position: fixed;

@@ -1,5 +1,6 @@
 @import url(./_reg/popup__switch_reg.css);
 @import url(./_signin/popup__switch_signin.css);
+@import url(./_ok/popup__switch_ok.css);
 
 .popup__switch {
   font-family: 'Inter', 'Roboto Slab';

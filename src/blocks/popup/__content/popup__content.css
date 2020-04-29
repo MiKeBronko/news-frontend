@@ -1,4 +1,5 @@
 @import url(./_reg/popup__content_reg.css);
+@import url(./_ok/popup__content_ok.css);
 
 .popup__content {
   width: 430px;

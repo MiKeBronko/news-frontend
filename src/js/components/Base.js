@@ -1,4 +1,4 @@
-class Base {
+export default class Base {
   constructor() {
     this._listenetrs = [];
   }

@@ -1,0 +1,4 @@
+.popup__form-ok.popup__form-ok_visible {
+  display: flex;
+  flex-direction: column;
+}

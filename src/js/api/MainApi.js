@@ -1,13 +1,11 @@
-// import { formReg } from '../../valid_reg';
-// import { form } from '../../valid_login';
-// import { formData } from '../const/formInputs';
+const userElement = document.querySelector('.header__usr_main');
+import { checkExist } from '../utils/get-reg';
+import { logOnHeader } from '../utils/header-login';
 
-// export const serverUrl = process.env.NODE_ENV === 'development' ? 'https://api.newsviewer.ml/api/signup' : 'https://newsviewer.ml';
-
-// export const serverUrl = 'http://localhost:3000/signup';
 export const serverUrl = [
   'https://api.newsviewer.ml/api/signup',
   'https://newsviewer.ml/api',
+  'https://newsviewer.ml/api/users/me',
 ];
 
 export class Api {
@@ -23,23 +21,24 @@ export class Api {
       headers: {
         'Content-Type': 'application/json',
       },
-      // body: JSON.stringify({
-      //   email: formReg.elements.email.value,
-      //   password: formReg.elements.sample.value,
-      //   name: formReg.elements.name.value,
-      // }),
-    });
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         // console.log(res.json());
-  //         return res.json();
-  //       }
-  //       return Promise.reject(new Error(`Ошибка: ${res.status}`));
-  //     })
-  //     .catch((err) => {
-  //       // console.log(err);
-  //       console.log("Ошибка. Запрос не выполнен - signup");
-  //     });
+      body: JSON.stringify({
+        email: formReg.elements.email.value,
+        password: formReg.elements.sample.value,
+        name: formReg.elements.name.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          checkExist(true)
+          return res.json();
+        }
+        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+      })
+      .catch((err) => {
+        // console.log(err);
+        console.log("Ошибка. Запрос не выполнен - signup");
+      })
+      .finally(checkExist(false));
   }
 
   signin() {
@@ -49,15 +48,15 @@ export class Api {
       headers: {
         'Content-Type': 'application/json',
       },
-      // body: JSON.parse(formData),
       body: JSON.stringify({
-        // email: form.elements.email.value,
-        // password: form.elements.sample.value,
+        email: form.elements.email.value,
+        password: form.elements.sample.value,
       }),
     })
       .then((res) => {
         if (res.ok) {
-          console.log(res.status);
+          logOnHeader(true)
+          // console.log(res.status);
           return res.json();
         }
         return Promise.reject(
@@ -70,7 +69,8 @@ export class Api {
       .catch((err) => {
         console.log(err);
         console.log('Ошибка. Запрос не выполнен - login');
-      });
+      })
+      .finally(logOnHeader(false));
   }
 
   getUser() {
@@ -86,9 +86,12 @@ export class Api {
         }
         return Promise.reject(new Error(`Ошибка: ${res.status}`));
       })
+      .then((data) => {
+        userElement.textContent = data.name;
+      })
       .catch((err) => {
-        console.log(err);
-        console.log('Ошибка. Запрос не выполнен - user');
+        console.log(`'Запрос не выполнен: ${err}`);
+        console.log();
       });
   }
 

@@ -1,0 +1,14 @@
+@import url(./_visible/popup__form-ok_visible.css);
+
+.popup__form-ok {
+  width: 358px;
+  margin-top: 0;
+  display: none;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .popup__form-ok {
+    width: 100%;
+  }
+}
