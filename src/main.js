@@ -53,18 +53,18 @@ document.querySelector('.search__button').addEventListener('click', (e) => {
             initialCards.push(data.articles[i]);
 
           // const resultsList = Array.from(data.articles);
-          const [source, title, text, datePublished,  image] = initialCards;
+          const [source, title, text,  datePublished,  image] = initialCards;
 
-        //   art = {
-        //     title: data.articles[i].title,
-        //     source: data.articles[i].source.name, =
-        //     datePublished: data.articles[i].publishedAt,
-        //     text: data.articles[i].description,
-        //     image: data.articles[i].urlToImage,
-        //     keyword: keyw,
-        //   };
-        //   console.log(art);
-        // }
+          // art = {
+          //   title: data.articles[i].title,
+          //   source: data.articles[i].source.name, =
+          //   datePublished: data.articles[i].publishedAt,
+          //   text: data.articles[i].description,
+          //   image: data.articles[i].urlToImage,
+          //   keyword: keyw,
+          // };
+          // console.log(art);
+        }
         }
           // const source = data.articles[i].source.name;
           // const title = data.articles[i].title;
@@ -94,7 +94,9 @@ document.querySelector('.search__button').addEventListener('click', (e) => {
         ccardList.renderCard();
         // }
       });
-
+    // document.getElementById('result').style.display = 'none';
+    // document.getElementById('preloader').style.display = 'block';
+    // setTimeout(tempOpen, 1000);
   }
 });
 
