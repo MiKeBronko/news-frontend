@@ -1,0 +1,4 @@
+.popup__form-reg.popup__form-reg_visible {
+  display: flex;
+  flex-direction: column;
+}

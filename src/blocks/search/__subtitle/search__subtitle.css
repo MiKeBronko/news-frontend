@@ -1,0 +1,99 @@
+.search__subtitle {
+  font-family: 'Roboto', 'inter' ;
+  font-style: normal;
+
+  position: absolute;
+  color: #fff;
+  z-index: 10;
+  }
+
+
+@media screen and (min-width:  1920px) {
+  .search__subtitle {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    width: 545px;
+    height: 48px;
+    left: calc(50% - 304px);
+    top: calc(100% - 48px * 5.7) ;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .search__subtitle {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    width: 545px;
+    height: 48px;
+    left: calc(50% - 304px);
+    top: calc(100% - 48px * 5.7) ;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .search__subtitle {
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 24px;
+    width: 452px;
+    height: 48px;
+    margin: 0;
+    left: calc(50% - 452px / 1.5);
+    top: calc(62% - 48px);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .search__subtitle {
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 24px;
+    width: 452px;
+    height: 48px;
+    margin: 0;
+    left: calc(50% - 452px / 2);
+    top: calc(62% - 48px);
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 767px) {
+  .search__subtitle {
+    font-style: normal;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    width: 287px;
+    left: calc(50% - 415px / 2);
+    top: calc(50% - 48px / 2);
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  .search__subtitle {
+    font-style: normal;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    max-width: 287px;
+    max-height: 72px;
+    left: calc(50% - 288px / 2);
+    top: calc(48% - 72px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .search__subtitle {
+    font-style: normal;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    max-width: 287px;
+    max-height: 72px;
+    left: calc(50% - 284px / 2);
+    top: calc(48% - 72px);
+  }
+}

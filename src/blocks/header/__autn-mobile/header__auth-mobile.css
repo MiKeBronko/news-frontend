@@ -1,0 +1,53 @@
+@import url(./_visible/header__auth-mobile_visible.css);
+
+.header__auth-mobile {
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-family: 'Roboto', 'inter' ;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  width: 288px;
+  height: 48px;
+  display: none;
+};
+
+
+@media screen and (min-width: 1440px) {
+  .header__auth-mobile {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .header__auth-mobile {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .header__auth-mobile {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__auth-mobile {
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .header__auth-mobile {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .header__auth-mobile {
+    font-size: 18px;
+  }
+}

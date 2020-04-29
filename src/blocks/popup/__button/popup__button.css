@@ -1,0 +1,17 @@
+@import url(./_active/popup__button_active.css);
+@import url(./_reg/popup__button_reg.css);
+
+.popup__button {
+  width: 358px;
+  height: 64px;
+  margin-top: 11px;
+  margin-bottom: 16px;
+  background: #e6e8eb;
+  color: #b6bcbf;
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .popup__button {
+    width: 100%;
+  }
+}

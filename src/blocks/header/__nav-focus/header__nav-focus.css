@@ -1,0 +1,71 @@
+@import url(../__nav/header__nav.css);
+@import url(../__nav/_login/header__nav_login.css);
+@import url(./_login/__nav-focus_login.css);
+@import url(../header.css);
+
+
+.header__nav-focus {
+  position: absolute;
+  background-color: #fff;
+  color: #fff;
+  height: 2px;
+  margin: 0;
+  bottom: 0;
+}
+
+
+@media screen and (min-width: 1440px) {
+  .header__nav .header__nav-focus {
+    right: 311px;
+    width: 68px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .header__nav .header__nav-focus {
+    right: 311px;
+    width: 68px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__nav .header__nav-focus {
+    right: 250px;
+    width: 68px;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 767px) {
+  .header__nav .header__nav-focus {
+    right: 250px;
+    width: 68px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 549px) {
+  .header__nav .header__nav-focus {
+    right: 236px;
+    width: 68px;
+  }
+}
+
+.header__nav_login .header__nav-focus {
+  right: 460px;
+  width: 68px;
+}
+
+
+
+/*.header_nav .header__main ~.header__nav-focus {
+  right: 460px;
+  width: 68px;
+}
+
+ .header__main ~.header__nav-focus {
+  right: 353px;
+  width: 178px;
+}
+
+.header__article:hover ~.header__nav-focus {
+  width:178px;
+  right: 248px;
+} */

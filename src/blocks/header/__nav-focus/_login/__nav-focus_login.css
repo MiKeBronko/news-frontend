@@ -1,0 +1,14 @@
+@import url(../../_login/header_login.css);
+
+.header__nav-focus.header__nav-focus_login {
+  background-color: #1a1b22;
+  right: 248px;
+  width: 178px;
+
+}
+
+
+.header_login .header__nav-focus {
+  right: 248px;
+  width: 178px;
+}
